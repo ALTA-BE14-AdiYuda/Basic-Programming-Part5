@@ -6,6 +6,20 @@ import (
 
 func Caesar(offset int, input string) string {
 	// your code here
+	var hasil string
+	str := []byte(input)
+	huruf := 26
+	z := 122
+	if offset > huruf {
+		offset = offset % huruf
+	}
+	for i := 0; i < len(str); i++ {
+		if str[i]+byte(offset) > byte(z) {
+			str[i] = str[i] - byte(huruf)
+		}
+		hasil += string(str[i] + byte(offset))
+	}
+	return hasil
 }
 
 func main() {

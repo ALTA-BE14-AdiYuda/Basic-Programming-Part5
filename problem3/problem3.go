@@ -4,6 +4,20 @@ import "fmt"
 
 func ArrayUnique(arrayA, arrayB []int) []int {
 	// your code here
+	var slcArrUniq = []int{}
+	var tmp int
+	for i := 0; i < len(arrayA); i++ {
+		for j := 0; j < len(arrayB); j++ {
+			if arrayA[i] == arrayB[j] {
+				tmp = arrayA[i]
+			}
+		}
+		if arrayA[i] != tmp {
+			slcArrUniq = append(slcArrUniq, arrayA[i])
+		}
+	}
+	return slcArrUniq
+
 }
 
 func main() {
